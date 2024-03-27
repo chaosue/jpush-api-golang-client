@@ -23,6 +23,7 @@ const (
 	OPPO   ThirdChannelType = "oppo"
 	VIVO   ThirdChannelType = "vivo"
 	FCM    ThirdChannelType = "fcm"
+	HONOR  ThirdChannelType = "honor"
 )
 
 type ThirdPartyOptions struct {
@@ -33,7 +34,7 @@ type ThirdPartyOptions struct {
 	SkipQuota             bool        `json:"skip_quota"`                       //配额判断及扣除, 目前仅对小米和oppo有效
 	Classification        int         `json:"classification,omitempty"`         //通知栏消息分类, 为了适配 vivo 手机厂商通知栏消息分类,“0”代表运营消息，“1”代表系统消息
 	PushMode              int         `json:"push_mode,omitempty"`              //通知栏消息类型, 对应 vivo 的 pushMode 字段,值分别是：“0”表示正式推送；“1”表示测试推送，不填默认为0
-	Importance            string      `json:"importance,omitempty"`             //华为通知栏消息智能分类, 为了适配华为手机厂商的通知栏消息智能分类
+	Importance            string      `json:"importance,omitempty"`             //华为/荣耀通知栏消息智能分类, 为了适配华为手机厂商的通知栏消息智能分类
 	Urgency               string      `json:"urgency,omitempty"`                //华为厂商自定义消息优先级, 为了适配华为手机厂商自定义消息的优先级
 	Category              string      `json:"category,omitempty"`               //华为厂商自定义消息场景标识
 	LargeIcon             string      `json:"large_icon,omitempty"`             //厂商消息大图标样式, 目前支持小米/华为/oppo三个厂商
